@@ -1,0 +1,119 @@
+{
+  "kind": "collectionType",
+  "collectionName": "properties",
+  "info": {
+    "singularName": "property",
+    "pluralName": "properties",
+    "displayName": "Property",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "imageGallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "floorPlanImage": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "masterPlanImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "startPrice": {
+      "type": "biginteger"
+    },
+    "propertyType": {
+      "type": "enumeration",
+      "enum": [
+        "Apartment",
+        "Villa",
+        "Twinhouse",
+        "Townhouse",
+        "Duplex",
+        "Penthouse",
+        "Chalet",
+        "Studio",
+        "Cabin",
+        "Clinic",
+        "Office"
+      ]
+    },
+    "bathrooms": {
+      "type": "integer"
+    },
+    "bedrooms": {
+      "type": "integer"
+    },
+    "squareMeters": {
+      "type": "integer"
+    },
+    "deliveryIn": {
+      "type": "integer"
+    },
+    "finishing": {
+      "type": "enumeration",
+      "enum": [
+        "Not Finished",
+        "Semi Finished",
+        "Finished",
+        "Furnished"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "isRecommended": {
+      "type": "boolean",
+      "default": false
+    },
+    "compound": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::compound.compound",
+      "inversedBy": "properties"
+    },
+    "isResale": {
+      "type": "boolean",
+      "default": false
+    },
+    "originalPlan": {
+      "displayName": "Original Plan",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.original-plan"
+    },
+    "locationOnMap": {
+      "type": "customField",
+      "options": {
+        "info": true
+      },
+      "customField": "plugin::geodata.geojson"
+    }
+  }
+}

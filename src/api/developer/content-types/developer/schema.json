@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "developers",
+  "info": {
+    "singularName": "developer",
+    "pluralName": "developers",
+    "displayName": "Developer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false,
+    "idField": "slug"
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "startPrice": {
+      "type": "decimal"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "compounds": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::compound.compound",
+      "mappedBy": "developer"
+    },
+    "areas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::area.area",
+      "mappedBy": "developers"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

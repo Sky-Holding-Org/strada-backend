@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_layout_original_plans",
+  "info": {
+    "displayName": "Original Plan",
+    "icon": "chartPie"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Original Plan"
+    },
+    "down_payment": {
+      "type": "biginteger"
+    },
+    "monthly_payment": {
+      "type": "integer"
+    },
+    "duration_years": {
+      "type": "integer"
+    }
+  }
+}
